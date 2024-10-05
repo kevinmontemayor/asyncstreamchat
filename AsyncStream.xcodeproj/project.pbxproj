@@ -6,23 +6,64 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		924A082B2CADFDFB004E3032 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A081F2CADFDFB004E3032 /* ContentView.swift */; };
+		924A082C2CADFDFB004E3032 /* AsyncStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A081B2CADFDFB004E3032 /* AsyncStreamApp.swift */; };
+		924A082D2CADFDFB004E3032 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A08222CADFDFB004E3032 /* Message.swift */; };
+		924A082E2CADFDFB004E3032 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A081C2CADFDFB004E3032 /* ChatView.swift */; };
+		924A08312CADFDFB004E3032 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A081D2CADFDFB004E3032 /* ChatViewModel.swift */; };
+		924A083B2CAE0A5C004E3032 /* MultipeerChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A083A2CAE0A5C004E3032 /* MultipeerChatService.swift */; };
+		92D984632CAE344000E6D99A /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 924A083E2CAE0B0C004E3032 /* MultipeerConnectivity.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8375FD602CB1EF3200B15F2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 924A07BE2CA9B794004E3032 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 924A07C52CA9B794004E3032;
+			remoteInfo = AsyncStream;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		924A07C62CA9B794004E3032 /* AsyncStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsyncStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8375FD5C2CB1EF3200B15F2C /* AsyncStreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncStreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		924A081B2CADFDFB004E3032 /* AsyncStreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncStreamApp.swift; sourceTree = "<group>"; };
+		924A081C2CADFDFB004E3032 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		924A081D2CADFDFB004E3032 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		924A081F2CADFDFB004E3032 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		924A08222CADFDFB004E3032 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		924A083A2CAE0A5C004E3032 /* MultipeerChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerChatService.swift; sourceTree = "<group>"; };
+		924A083E2CAE0B0C004E3032 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		92D984602CAE334900E6D99A /* AsyncStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsyncStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		924A07C82CA9B794004E3032 /* AsyncStream */ = {
+		8375FD5D2CB1EF3200B15F2C /* AsyncStreamTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = AsyncStream;
+			path = AsyncStreamTests;
+			sourceTree = "<group>";
+		};
+		924A08382CAE09F7004E3032 /* Images */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8375FD592CB1EF3200B15F2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		924A07C32CA9B794004E3032 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D984632CAE344000E6D99A /* MultipeerConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,22 +73,102 @@
 		924A07BD2CA9B794004E3032 = {
 			isa = PBXGroup;
 			children = (
-				924A07C82CA9B794004E3032 /* AsyncStream */,
-				924A07C72CA9B794004E3032 /* Products */,
+				924A08352CADFE2F004E3032 /* AsyncStream */,
+				8375FD5D2CB1EF3200B15F2C /* AsyncStreamTests */,
+				924A083D2CAE0B0C004E3032 /* Frameworks */,
+				92D984602CAE334900E6D99A /* AsyncStream.app */,
+				8375FD5C2CB1EF3200B15F2C /* AsyncStreamTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
-		924A07C72CA9B794004E3032 /* Products */ = {
+		924A08232CADFDFB004E3032 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				924A07C62CA9B794004E3032 /* AsyncStream.app */,
+				924A08222CADFDFB004E3032 /* Message.swift */,
 			);
-			name = Products;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		924A08272CADFDFB004E3032 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				924A081D2CADFDFB004E3032 /* ChatViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		924A08282CADFDFB004E3032 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				924A081C2CADFDFB004E3032 /* ChatView.swift */,
+				924A081F2CADFDFB004E3032 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		924A08352CADFE2F004E3032 /* AsyncStream */ = {
+			isa = PBXGroup;
+			children = (
+				924A083C2CAE0A81004E3032 /* App */,
+				924A08392CAE0A47004E3032 /* Networking */,
+				924A08232CADFDFB004E3032 /* Models */,
+				924A08282CADFDFB004E3032 /* Views */,
+				924A08272CADFDFB004E3032 /* ViewModels */,
+				924A08382CAE09F7004E3032 /* Images */,
+			);
+			path = AsyncStream;
+			sourceTree = "<group>";
+		};
+		924A08392CAE0A47004E3032 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				924A083A2CAE0A5C004E3032 /* MultipeerChatService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		924A083C2CAE0A81004E3032 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				924A081B2CADFDFB004E3032 /* AsyncStreamApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		924A083D2CAE0B0C004E3032 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				924A083E2CAE0B0C004E3032 /* MultipeerConnectivity.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8375FD5B2CB1EF3200B15F2C /* AsyncStreamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8375FD642CB1EF3300B15F2C /* Build configuration list for PBXNativeTarget "AsyncStreamTests" */;
+			buildPhases = (
+				8375FD582CB1EF3200B15F2C /* Sources */,
+				8375FD592CB1EF3200B15F2C /* Frameworks */,
+				8375FD5A2CB1EF3200B15F2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8375FD612CB1EF3200B15F2C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				8375FD5D2CB1EF3200B15F2C /* AsyncStreamTests */,
+			);
+			name = AsyncStreamTests;
+			packageProductDependencies = (
+			);
+			productName = AsyncStreamTests;
+			productReference = 8375FD5C2CB1EF3200B15F2C /* AsyncStreamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		924A07C52CA9B794004E3032 /* AsyncStream */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 924A07D42CA9B796004E3032 /* Build configuration list for PBXNativeTarget "AsyncStream" */;
@@ -61,13 +182,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				924A07C82CA9B794004E3032 /* AsyncStream */,
+				924A08382CAE09F7004E3032 /* Images */,
 			);
 			name = AsyncStream;
 			packageProductDependencies = (
 			);
 			productName = AsyncStream;
-			productReference = 924A07C62CA9B794004E3032 /* AsyncStream.app */;
+			productReference = 92D984602CAE334900E6D99A /* AsyncStream.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -80,8 +201,13 @@
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					8375FD5B2CB1EF3200B15F2C = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 924A07C52CA9B794004E3032;
+					};
 					924A07C52CA9B794004E3032 = {
 						CreatedOnToolsVersion = 16.0;
+						LastSwiftMigration = 1600;
 					};
 				};
 			};
@@ -95,16 +221,24 @@
 			mainGroup = 924A07BD2CA9B794004E3032;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 924A07C72CA9B794004E3032 /* Products */;
+			productRefGroup = 924A07BD2CA9B794004E3032;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				924A07C52CA9B794004E3032 /* AsyncStream */,
+				8375FD5B2CB1EF3200B15F2C /* AsyncStreamTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8375FD5A2CB1EF3200B15F2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		924A07C42CA9B794004E3032 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,16 +249,83 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		924A07C22CA9B794004E3032 /* Sources */ = {
+		8375FD582CB1EF3200B15F2C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		924A07C22CA9B794004E3032 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				924A083B2CAE0A5C004E3032 /* MultipeerChatService.swift in Sources */,
+				924A082B2CADFDFB004E3032 /* ContentView.swift in Sources */,
+				924A082C2CADFDFB004E3032 /* AsyncStreamApp.swift in Sources */,
+				924A082D2CADFDFB004E3032 /* Message.swift in Sources */,
+				924A082E2CADFDFB004E3032 /* ChatView.swift in Sources */,
+				924A08312CADFDFB004E3032 /* ChatViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8375FD612CB1EF3200B15F2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 924A07C52CA9B794004E3032 /* AsyncStream */;
+			targetProxy = 8375FD602CB1EF3200B15F2C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		8375FD622CB1EF3200B15F2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VSH4NVQRKF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.kevinmontemayor.AsyncStreamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AsyncStream.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AsyncStream";
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		8375FD632CB1EF3200B15F2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VSH4NVQRKF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.kevinmontemayor.AsyncStreamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AsyncStream.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AsyncStream";
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 		924A07D22CA9B796004E3032 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -249,10 +450,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AsyncStream/Preview Content\"";
-				DEVELOPMENT_TEAM = 338LT5BJ9P;
+				DEVELOPMENT_TEAM = VSH4NVQRKF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -265,9 +467,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github-kevinmontemayor.AsyncStream";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github-kevinmontemayor.asyncstreamchat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AsyncStream-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -278,10 +482,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AsyncStream/Preview Content\"";
-				DEVELOPMENT_TEAM = 338LT5BJ9P;
+				DEVELOPMENT_TEAM = VSH4NVQRKF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -294,9 +499,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github-kevinmontemayor.AsyncStream";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github-kevinmontemayor.asyncstreamchat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AsyncStream-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -305,6 +511,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8375FD642CB1EF3300B15F2C /* Build configuration list for PBXNativeTarget "AsyncStreamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8375FD622CB1EF3200B15F2C /* Debug */,
+				8375FD632CB1EF3200B15F2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		924A07C12CA9B794004E3032 /* Build configuration list for PBXProject "AsyncStream" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
