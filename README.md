@@ -7,8 +7,7 @@ Typing Indicator: See when the other user is typing, updated dynamically in real
 AsyncStream: Efficient message handling using Swift’s AsyncStream, ensuring smooth and responsive interactions.
 Multipeer Connectivity: Automatically discover and connect with other nearby devices running the app.
 
-![image](https://github.com/user-attachments/assets/81ac690c-999b-46c7-b81c-e27f7f2f9191)
-
+<img width="950" alt="Async:Stream Chat" src="https://github.com/user-attachments/assets/0c758b2d-fe8c-4d08-84b1-57343951164b">
 
 Getting Started
 To get started with the AsyncStreamChat app, follow these steps:
@@ -72,4 +71,4 @@ Push to the branch (git push origin feature/your-feature).
 Create a new pull request.
 
 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License.
