@@ -12,7 +12,7 @@ struct ChatView: View {
     @State private var textInput = ""
     @State private var isOtherUserTyping = false
     @FocusState private var isTextFieldFocused: Bool
-    
+
     private var isDisabled: Bool {
         textInput.isEmpty
     }
@@ -36,31 +36,59 @@ struct ChatView: View {
 
             Spacer()
 
-            ScrollView {
-                ForEach(viewModel.messages) { message in
-                    HStack {
-                        if message.isUserMessage {
-                            Spacer()
-                            Text(message.content)
-                                .padding()
-                                .background(Color.blue)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                                .frame(maxWidth: 250, alignment: .trailing)
-                        } else {
-                            Text(message.content)
-                                .padding()
-                                .background(Color.gray.opacity(0.2))
-                                .cornerRadius(10)
-                                .frame(maxWidth: 250, alignment: .leading)
-                            Spacer()
+            ScrollViewReader { proxy in
+                ScrollView {
+                    ForEach(viewModel.messages) { message in
+                        HStack(alignment: .top) {
+                            if message.isUserMessage(for: viewModel.localUsername) {
+                                Spacer()
+                                VStack(alignment: .trailing) {
+                                    HStack {
+                                        Text(message.username)
+                                            .font(.caption)
+                                            .foregroundColor(.gray)
+                                        Text(message.timestamp, style: .time)
+                                            .font(.caption2)
+                                            .foregroundColor(.gray)
+                                    }
+                                    Text(message.content)
+                                        .padding()
+                                        .background(Color.blue)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(10)
+                                        .frame(maxWidth: 250, alignment: .trailing)
+                                }
+                            } else {
+                                VStack(alignment: .leading) {
+                                    HStack {
+                                        Text(message.username)
+                                            .font(.caption)
+                                            .foregroundColor(.gray)
+                                        Text(message.timestamp, style: .time)
+                                            .font(.caption2)
+                                            .foregroundColor(.gray)
+                                    }
+                                    Text(message.content)
+                                        .padding()
+                                        .background(Color.gray.opacity(0.2))
+                                        .cornerRadius(10)
+                                        .frame(maxWidth: 250, alignment: .leading)
+                                }
+                                Spacer()
+                            }
                         }
+                        .padding(.horizontal)
+                        .padding(.vertical, 4)
+                        .id(message.id)
                     }
-                    .padding(.horizontal)
-                    .padding(.vertical, 4)
+                }
+                .onChange(of: viewModel.messages.count) { _ in
+                    if let lastMessage = viewModel.messages.last {
+                        proxy.scrollTo(lastMessage.id, anchor: .bottom)
+                    }
                 }
             }
-            
+
             if isOtherUserTyping {
                 HStack {
                     Text("User is typing...")
@@ -115,27 +143,30 @@ struct ChatView: View {
             isOtherUserTyping = typing
         }
     }
-    
+
     private func sendMessage() async {
         if !textInput.isEmpty {
-            await viewModel.sendMessage(textInput)
+            await viewModel.sendMessage(textInput, fromUser: viewModel.localUsername)
             textInput = ""
         }
     }
 }
 
-#Preview {
-    let previewViewModel = ChatViewModel()
+#Preview("ChatView Preview") {
+    // Explicitly define the type of the previewViewModel
+    let previewViewModel = ChatViewModel(localUsername: "Edgar Cayce", remoteUsername: "Dr. Jones")
     
+    // Adding messages with usernames and timestamps
     previewViewModel.messages = [
-        Message(content: "Hello, Async/Stream Chat!", isUserMessage: true),
-        Message(content: "Hello, User! How are you today?", isUserMessage: false),
-        Message(content: "I am doing well, thank you! How about you?", isUserMessage: true),
-        Message(content: "Battery systems are at optimal levels.", isUserMessage: false),
-        Message(content: "Great, are you ready to get started?", isUserMessage: true),
-        Message(content: "Yes, let us begin", isUserMessage: false)
+        Message(content: "Hello, Async/Stream Chat!", timestamp: Date().addingTimeInterval(-300), username: "Edgar Cayce"),
+        Message(content: "Hello, User! How are you today?", timestamp: Date().addingTimeInterval(-290), username: "Dr. Jones"),
+        Message(content: "I am doing well, thank you! How about you?", timestamp: Date().addingTimeInterval(-280), username: "Edgar Cayce"),
+        Message(content: "Battery systems are at optimal levels.", timestamp: Date().addingTimeInterval(-270), username: "Dr. Jones"),
+        Message(content: "Great, are you ready to get started?", timestamp: Date().addingTimeInterval(-260), username: "Edgar Cayce"),
+        Message(content: "Yes, let us begin", timestamp: Date().addingTimeInterval(-250), username: "Dr. Jones")
     ]
     
+    // Return the ChatView with the initialized previewViewModel
     return ChatView(viewModel: previewViewModel)
         .onAppear {
             previewViewModel.multipeerService.isOtherUserTyping = true

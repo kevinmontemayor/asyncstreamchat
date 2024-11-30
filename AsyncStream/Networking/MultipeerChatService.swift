@@ -86,17 +86,17 @@ class MultipeerChatService: NSObject, ObservableObject {
     
     /// Sends a text message to all connected peers.
     /// - Parameter message: The message to be sent as a `String`.
-    func sendMessage(_ message: String) async {
+    func sendMessage(_ message: String, from username: String) async {
         guard !session.connectedPeers.isEmpty else {
             print("No connected peers to send message to.")
             return
         }
+        let fullMessage = "\(username): \(message)"
         
-        // Encode the message to UTF-8 and send to all peers
-        if let messageData = message.data(using: .utf8) {
+        if let messageData = fullMessage.data(using: .utf8) {
             do {
                 try session.send(messageData, toPeers: session.connectedPeers, with: .reliable)
-                print("Sent message: \(message)")
+                print("Sent message: \(fullMessage)")
             } catch {
                 print("Error sending message: \(error.localizedDescription)")
             }
@@ -122,7 +122,7 @@ class MultipeerChatService: NSObject, ObservableObject {
 
 extension MultipeerChatService: MCSessionDelegate {
     
-    /// Monitors the peer's connection state changes (connected, connecting, not connected).
+    /// Monitors the peer's connection state changes (connected, not connected).
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         switch state {
         case .connected:
@@ -155,6 +155,7 @@ extension MultipeerChatService: MCSessionDelegate {
             } else {
                 // Otherwise, treat it as a chat message
                 DispatchQueue.main.async {
+                    print("Received message: \(message)")
                     self.receivedMessages.append(message)
                 }
             }
