@@ -7,7 +7,7 @@ Typing Indicator: See when the other user is typing, updated dynamically in real
 AsyncStream: Efficient message handling using Swift’s AsyncStream, ensuring smooth and responsive interactions.
 Multipeer Connectivity: Automatically discover and connect with other nearby devices running the app.
 
-![image](Images/screenshot.png)
+<img width="947" alt="asyncstreamchat-screenshot" src="https://github.com/user-attachments/assets/c9195454-bf49-458e-813e-1044a577b014">
 
 Getting Started
 To get started with the AsyncStreamChat app, follow these steps:
