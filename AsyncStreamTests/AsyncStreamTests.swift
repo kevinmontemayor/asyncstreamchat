@@ -17,8 +17,6 @@ class ChatViewModelTests: XCTestCase {
     override func setUp() {
         super.setUp()
         mockMultipeerChatService = MockMultipeerChatService()
-        
-        // Reinitialize ChatViewModel before each test to ensure a clean state
         chatViewModel = ChatViewModel()
         chatViewModel.multipeerService = mockMultipeerChatService
         
